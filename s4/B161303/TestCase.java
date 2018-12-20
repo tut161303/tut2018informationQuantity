@@ -31,16 +31,94 @@ public interface InformationEstimatorInterface{
 
 public class TestCase {
     public static void main(String[] args) {
+	/*
+	  CASE 1
+	  チェック項目：Space内のTargetの頻度を返すかどうか
+	*/
+
+	
 	try {
 	    FrequencerInterface  myObject;
 	    int freq;
-	    System.out.println("checking s4.B161303.Frequencer");
+	    System.out.println("CASE 1:checking s4.B161303.Frequencer");
 	    myObject = new s4.B161303.Frequencer();
 	    myObject.setSpace("Hi Ho Hi Ho".getBytes());
 	    myObject.setTarget("H".getBytes());
 	    freq = myObject.frequency();
 	    System.out.print("\"H\" in \"Hi Ho Hi Ho\" appears "+freq+" times. ");
 	    if(4 == freq) { System.out.println("OK"); } else {System.out.println("WRONG"); }
+	}
+	catch(Exception e) {
+	    System.out.println("Exception occurred: STOP");
+	}
+	
+
+	/*
+	  CASE 2
+	  チェック項目：Targetに何もセットされていないとき,frequency()が-1を返すかどうか 
+	*/
+
+	try {
+	    FrequencerInterface  myObject;
+	    int freq;
+	    System.out.println("CASE 2:checking s4.B161303.Frequencer");
+	    myObject = new s4.B161303.Frequencer();
+	    myObject.setSpace("Hi Ho Hi Ho".getBytes());
+	    freq = myObject.frequency();
+	    System.out.print("\"H\" in \"Hi Ho Hi Ho\" appears "+freq+" times. ");
+	    if(-1 == freq) { System.out.println("OK"); } else {System.out.println("WRONG"); }
+	}
+	catch(Exception e) {
+	    System.out.println("Exception occurred: STOP");
+	}
+
+	/*
+	  CASE 3
+	  チェック項目：Targetの長さが0の時,frequency()が-1を返すかどうか
+	*/
+	try {
+	    FrequencerInterface  myObject;
+	    int freq;
+	    System.out.println("CASE 3:checking s4.B161303.Frequencer");
+	    myObject = new s4.B161303.Frequencer();
+	    myObject.setSpace("a".getBytes());
+	    myObject.setTarget("".getBytes());
+	    freq = myObject.frequency();
+	    System.out.print("\"a\" in \"\" appears "+freq+" times. ");
+	    if(-1 == freq) { System.out.println("OK"); } else {System.out.println("WRONG"); }
+	}
+	catch(Exception e) {
+	    System.out.println("Exception occurred: STOP");
+	}
+	/*
+	  CASE 4
+	  チェック項目：Spaceに何もセットされない時,0を返すかどうか
+	*/
+	try {
+	    FrequencerInterface  myObject;
+	    int freq;
+	    System.out.println("CASE 4:checking s4.B161303.Frequencer");
+	    myObject = new s4.B161303.Frequencer();
+	    myObject.setTarget("H".getBytes());
+	    freq = myObject.frequency();
+	    if(0 == freq) { System.out.println("OK"); } else {System.out.println("WRONG"); }
+	}
+	catch(Exception e) {
+	    System.out.println("Exception occurred: STOP");
+	}
+      	/*
+	  CASE 5
+	  チェック項目：Spaceの長さが0の時,0を返すかどうか
+	*/
+	try {
+	    FrequencerInterface  myObject;
+	    int freq;
+	    System.out.println("CASE 5:checking s4.B161303.Frequencer");
+	    myObject = new s4.B161303.Frequencer();
+	    myObject.setSpace("".getBytes());
+	    myObject.setTarget("H".getBytes());
+	    freq = myObject.frequency();
+	    if(0 == freq) { System.out.println("OK"); } else {System.out.println("WRONG"); }
 	}
 	catch(Exception e) {
 	    System.out.println("Exception occurred: STOP");
