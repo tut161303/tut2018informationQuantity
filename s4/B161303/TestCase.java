@@ -161,7 +161,7 @@ public class TestCase {
 	  CASE 8
 	  チェック項目：配列内に日本語を使用してもfrequency()が正しく機能するか(環境によってエラーが出る場合がある)
 	*/
-		try {
+	try {
 	    FrequencerInterface  myObject;
 	    int freq;
 	    System.out.println("CASE 8:checking s4.B161303.Frequencer");
